@@ -41,14 +41,15 @@ let cartListTotal;
 //加入購物車，如果id已有加入，則原有的數量+1
 productWrap.addEventListener('click',function(e){
     e.preventDefault();
-    let id=e.target.getAttribute('data-id')
-    let numCheck=0;
+    let id=e.target.getAttribute('data-id');
+    let numCheck=1;
     cartListData.forEach(function(item){
         if(item.product.id==id){
             numCheck=item.quantity+1
         }
     })
     addCartNum(id,numCheck)
+    
 })
 
 function addCartNum(id,num){
